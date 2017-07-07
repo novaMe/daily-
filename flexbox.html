@@ -3,23 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <title>Flexbox</title>
-    <link rel="stylesheet" href="flexbox.css">
+    <!--<link rel="stylesheet" href="flexbox.css">-->
+    <style>
+        .ani {
+            width:5rem;
+            height:3rem;
+            text-align: center;
+            border:1px solid red;
+            text-shadow: aquamarine;
+            -webkit-tap-highlight-color: #fff;
+
+        }
+        .content {
+            margin-top:1rem;
+            width:10rem;
+            height:7rem;
+            background-color: blueviolet;
+            position:relative;
+        }
+    </style>
 </head>
 <body>
-<nav>伸缩盒模型</nav>
-<section id="sidebar">侧边导航
-    <ul id="barname">
-        <li>特价</li>
-        <li>水果</li>
-        <li>乳品</li>
-        <li>肉蛋</li>
-        <li>蔬菜</li>
-        <li>零食</li>
-        <li>饮品</li>
-        <li>水产</li>
-    </ul>
-</section>
-<section class="content">主题内容</section>
-<section class="footer">底部内容</section>
+<button class="ani">点击移动</button>
+<button class="sert">点击后插入</button>
+<button class="sertB">点击前插入</button>
+<div class="content">hello world</div>
+<p>新的段落</p>
+
 </body>
 </html>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('.ani').click(function() {
+            $('.content').animate({
+                left:'5rem',
+                opacity:'0.5',
+                height:'4.8rem',
+                width:'4.8rem'},3000)
+        })
+        $('.ani').click(function() {
+            var div=$("div");
+            div.animate({height:'300px',opacity:'0.4'},"slow");
+            div.animate({width:'300px',opacity:'0.8'},"slow");
+            div.animate({height:'100px',opacity:'0.4'},"slow");
+            div.animate({width:'100px',opacity:'0.8'},"slow");
+            div.animate({left:'100px'},"slow");
+            div.animate({fontSize:'3em'},"slow");
+        })
+        $(".ani").click(function() {
+            $('div').hide('slow',function() {
+                alert('段落被隐藏')
+            })
+        })
+        $('.ani').click(function() {
+            $('div').append('欢乐颂')
+        })
+        $('.ani').click(function() {
+            $('div').prepend('曲筱绡')
+        })
+        $('.sert').click(function() {
+            $('p').after('关雎尔')
+        })
+        $('.sertB').click(function() {
+            $('p').before('樊胜美')
+        })
+    })
+    function appendText()
+    {
+        var txt1="<p>文本1。</p>";              // 使用 HTML 标签创建文本
+        var txt2=$("<p></p>").text("文本2。");  // 使用 jQuery 创建文本
+        var txt3=document.createElement("p");
+        txt3.innerHTML="文本3。";               // 使用 DOM 创建文本 text with DOM
+        $("body").append(txt1,txt2,txt3);        // 追加新元素
+    }
+    $('.sertB').click(function() {
+        appendText();
+    });
+    function afterText()
+    {
+        var txt1="<b>I </b>";                    // 使用 HTML 创建元素
+        var txt2=$("<i></i>").text("love ");     // 使用 jQuery 创建元素
+        var txt3=document.createElement("big");  // 使用 DOM 创建元素
+        txt3.innerHTML="jQuery!";
+        $("body").after(txt1,txt2,txt3);          // 在图片后添加文本
+    }
+    $('.sert').click(function() {
+        afterText();
+    });
+//    var b = {
+//        name: 'b',
+//        foo: function(){
+//            console.log(this.name)
+//        }
+//
+//    };
+//    b.foo();
+//    var foo = b.foo;
+//    foo();
+//    name = 'is or not b'
+//    foo();
+//
+//    (function() {
+//        'use strict';
+//        var a=window.b=4;
+//    })()
+////    console.log(a);
+//    console.log(b)
+
+//     var fullname = 'John Doe';
+//     var obj = {
+//            fullname: 'Colin Ihrig',
+//                prop: {
+//               fullname: 'Aurelio De Rosa',
+//                getFullname: function() {
+//                     return this.fullname;
+//                  }
+//           }
+//     };
+//
+//     console.log(obj.prop.getFullname());
+//
+//     var test = obj.prop.getFullname;
+//
+//     console.log(test());
+//    console.log(test.call(obj.prop))
+
+
+</script>
