@@ -1,0 +1,19 @@
+{
+  "name": "daily",
+  "version": "1.0.0",
+  "description": "daily practice dir",
+  "main": "jsonp.js",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-latest": "^6.24.1"
+  },
+  "devDependencies": {
+    "babel-preset-latest": "^6.24.1"
+  },
+  "scripts": {
+    "test": "111"
+  },
+  "author": "wq",
+  "license": "ISC"
+}
