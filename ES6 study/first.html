@@ -3,8 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="first.css">
 </head>
 <body>
-
+<!--头部地址和搜索-->
+<section class="topInfo">
+    <span class="tipTime">2小时达</span>
+    <span>国风美唐二期</span>
+    <i>∨</i>
+    <span>搜索</span>
+</section>
 </body>
 </html>
+<script src="../Self/self.js"></script>
+<script>
+    function createJs(sUrl){
+
+        var oScript = document.createElement('script');
+        oScript.type = 'text/javascript';
+        oScript.src = sUrl;
+        document.getElementsByTagName('head')[0].appendChild(oScript);
+    }
+
+    createJs('../jsonp.js');
+
+    box({
+        'name': 'test'
+    });
+
+    function box(json){
+        alert(json.name);
+    }
+    randomNumber(34);
+</script>
