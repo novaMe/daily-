@@ -6,8 +6,7 @@
   "dependencies": {
     "babel": "^6.23.0",
     "babel-preset-env": "^1.6.0",
-    "babel-preset-latest": "^6.24.1",
-    "private": true
+    "babel-preset-latest": "^6.24.1"
   },
   "devDependencies": {
     "babel-preset-latest": "^6.24.1"
@@ -16,5 +15,13 @@
     "test": "111"
   },
   "author": "wq",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/novaMe/daily-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/novaMe/daily-/issues"
+  },
+  "homepage": "https://github.com/novaMe/daily-#readme"
 }
